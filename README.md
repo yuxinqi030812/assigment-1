@@ -8,7 +8,7 @@ In this assignment, you will test a simplified Incident Registration Management 
 - request supervisor access, and
 - retrieve incidents.
 
-Each incident is recorded with an ID and a numeric severity rating, allowing the system monitor and evaluate the severity of reported events. For simplicity, the system uses a Java data structure as its database. It is assumed that the implementation has no security vulnerabilities, and all these functions are intended for use by authorised supervisors and analysts under appropriate access controls.
+Each incident is recorded with an ID and a numeric severity rating, allowing the system to monitor and evaluate the severity of reported events. For simplicity, the system uses a Java data structure as its database. It is assumed that the implementation has no security vulnerabilities, and all these functions are intended for use by authorised supervisors and analysts under appropriate access controls.
 
 This assignment focuses on input partitioning, boundary-value analysis, control-flow testing, and briefly examines mutation testing.
 You are provided with the specification of the IRMS and its implementation as a Java program. The program is organised into a folder containing multiple files consistent with the specification. Your task involves testing the program using various techniques and analysing the effectiveness of these methods.
@@ -91,7 +91,7 @@ Edit **`id.txt`**, replacing the sample ID with your own, making sure it only in
 
 #### Task 1 -- Equivalence Partitioning
 
-Using the specifications in **IRMSSpecs.txt**, apply equivalence partitioning to find equivalence classes for the following methods in the API: `registerAnalyst`, `authenticate`, `requestSupervisorAccess`, `submitIncident`, and`getIncident`.
+Using the specifications in **IRMSSpecs.txt**, apply equivalence partitioning to find equivalence classes for the following methods in the API: `registerAnalyst`, `authenticate`, `requestSupervisorAccess`, `submitIncident`, and `getIncident`.
 
 **Important:** For this task, only refer to the specifications in **IRMSSpecs.txt**. While the `IRMS.java` file includes Javadoc comments, these are for overall software quality, not test case derivation. Since this is black-box testing, you must base your test cases solely on **IRMSSpecs.txt**.
 
@@ -103,11 +103,11 @@ Finally, ensure your set of equivalence classes covers the entire input space. J
 
 #### Task 2 -- JUnit Test Driver for Equivalence Partitioning
 
-Select test cases linked to your equivalence classes and implement them in the JUnit test driver located at `tests/swen90006/irms/PartitioningTests.java`. Use *one* JUnit test method for each equivalence class. Clearly identify which class each test case has been selected from.Once complete, push this script to your Git repository.
+Select test cases linked to your equivalence classes and implement them in the JUnit test driver located at `tests/swen90006/irms/PartitioningTests.java`. Use *one* JUnit test method for each equivalence class. Clearly identify which class each test case has been selected from. Once complete, push this script to your Git repository.
 
 Include this as Appendix A in your submission.
 
-**Note:** When writing tests for a specific method, you may use other methods to verifythat the first method works correctly. Additionally, you might need to execute other methodsin the class to prepare the instance for testing (see the example in `PartitioningTests.java`).
+**Note:** When writing tests for a specific method, you may use other methods to verify that the first method works correctly. Additionally, you might need to execute other methodsin the class to prepare the instance for testing (see the example in `PartitioningTests.java`).
 
 #### Task 3 -- Boundary-Value Analysis
 
@@ -122,13 +122,13 @@ Include this as Appendix B in your submission.
 
 #### Task 5 -- Coverage-based Testing
 
-Evaluate the effectiveness of two test suites (equivalence partitioning and boundary-value analysis). For this task,you should complete these three sub-tasks:
+Evaluate the effectiveness of two test suites (equivalence partitioning and boundary-value analysis). For this task, you should complete these three sub-tasks:
 
 1. Draw a control flow graph of the `registerAnalyst` method.
 2. Determine the coverage score of your two test suites using *condition coverage* for the `isValidAnalystName` method. Note that you can access the source code in the Coverage-based Testing section, and the `isValidAnalystName` method is called by the `registerAnalyst` method.
 3. Determine the coverage score of your two test suites using *multi-condition coverage* for the `registerAnalyst` method.
 
-**Note:** For the entire Coverage-based Testing section, you do not need to consider any inter-procedural analysis, thatmeaning you only need to use the information available for that function. For example, when examining the`authenticate` method, there is no need to draw a control flow graph or measure coverage based on insidethe methods called within `authenticate`.
+**Note:** For the entire Coverage-based Testing section, you do not need to consider any inter-procedural analysis, which means you only need to use the information available for that function. For example, when examining the `authenticate` method, there is no need to draw a control flow graph or measure coverage based on inside the methods called within `authenticate`.
 Present your coverage calculation work in a table that lists each test objective (i.e., each combination for multiple-condition coverage or each condition for condition coverage) and one test that achieves it, if any.
 
 Marks will be awarded for each sub-task: correctly drawing the control flow graph, accurately calculating coverage scores, and clearly demonstrating how these scores were derived. No marks are given for solely having a higher coverage score.
@@ -146,7 +146,7 @@ Each mutant must modify exactly one line of `IRMS.java` for each version (`mutan
 
 #### Task 7 -- Comparison
 
-Compare the two sets of test cases (equivalence partitioning and boundary-value analysis) and their results. Which methoddo you find more effective, and why? Consider the coverage of the valid input/output domain, the extent of coverageachieved, and the mutants it eliminates(i.e., killed). Limit your comparison to half a page. If your comparison exceeds this, only the first half-page youwill be assessed.
+Compare the two sets of test cases (equivalence partitioning and boundary-value analysis) and their results. Which method do you find more effective, and why? Consider the coverage of the valid input/output domain, the extent of coverageachieved, and the mutants it eliminates(i.e., killed). Limit your comparison to half a page. If your comparison exceeds this, only the first half-page you will be assessed.
 
 ## Marking criteria
 
@@ -167,7 +167,7 @@ For the Original tests, we award 1 mark if your JUnit test does not cause a buil
 
 **Important**: We determine that a mutant is killed when a JUnit test includes a failed test. Because of this, if a test case fails when applied to the original source code, it will also fail on most of your mutants and staff mutants. If you find a test that is supposed to pass according to the specifications but fails in the original source code, please let us know via a private thread showing your test cases on the discussion board.
 
-For the Mutant score, we award 1 mark if your JUnit test kills all of your own mutants, meaning some tests in your JUnit suitests fail when applied to your mutants.
+For the Mutant score, we award 1 mark if your JUnit test kills all of your own mutants, meaning some tests in your JUnit tests fail when applied to your mutants.
 If not all mutants are killed, we calculate the mark using the following formula:
 ```
 Mutant_score = (mutants_killed / 5) * (1 - penalty_for_equivalent_mutant)
@@ -198,7 +198,7 @@ For the remainder of the assignment (test template tree, boundary-value analysis
 
 Some tips for managing the assignment, particularly regarding equivalence partitioning:
 
-1. Ensure that you understand the notes *before* diving into the assignment. Trying to learn equivalence partitioning or boundary-value analysis on a project of this size is challenging. If you do not understand the simple examples in the notes, understanding will not come from applying it to more complex examples.
+1. Ensure that you understand the notes *before* diving into the assignment. Trying to learn equivalence partitioning or boundary-value analysis on a project of this size is challenging. If you do not understand the simple examples in the notes, understanding will not come from applying them to more complex examples.
 
 2. Keep it simple: don't focus on what you think we want to see — focus on identifying good tests and documenting them systematically. That is what we want to see.
 
@@ -213,7 +213,7 @@ subject Canvas site.
 
 ### Academic Misconduct
 
-The University academic integrity policy (see [https://academicintegrity.unimelb.edu.au/](https://academicintegrity.unimelb.edu.au/) applies. Students areencouraged to discuss the assignment topic, but all submitted work must reflect the individual's understanding of the topic.
+The University academic integrity policy (see [https://academicintegrity.unimelb.edu.au/](https://academicintegrity.unimelb.edu.au/) applies. Students are encouraged to discuss the assignment topic, but all submitted work must reflect the individual's understanding of the topic.
 The subject staff take academic misconduct very seriously. In this subject, in the past, we have successfully prosecuted several students who have breached the university policy. Often, this results in receiving 0 marks for the assessment, and in some cases, has led to failure of the subject.
 
 ### Originality Multiplier
