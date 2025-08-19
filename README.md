@@ -107,7 +107,7 @@ Select test cases linked to your equivalence classes and implement them in the J
 
 Include this as Appendix A in your submission.
 
-**Note:** When writing tests for a specific method, you may use other methods to verify that the first method works correctly. Additionally, you might need to execute other methodsin the class to prepare the instance for testing (see the example in `PartitioningTests.java`).
+**Note:** When writing tests for a specific method, you may use other methods to verify that the first method works correctly. Additionally, you might need to execute other methods in the class to prepare the instance for testing (see the example in `PartitioningTests.java`).
 
 #### Task 3 -- Boundary-Value Analysis
 
@@ -146,7 +146,7 @@ Each mutant must modify exactly one line of `IRMS.java` for each version (`mutan
 
 #### Task 7 -- Comparison
 
-Compare the two sets of test cases (equivalence partitioning and boundary-value analysis) and their results. Which method do you find more effective, and why? Consider the coverage of the valid input/output domain, the extent of coverageachieved, and the mutants it eliminates(i.e., killed). Limit your comparison to half a page. If your comparison exceeds this, only the first half-page you will be assessed.
+Compare the two sets of test cases (equivalence partitioning and boundary-value analysis) and their results. Which method do you find more effective, and why? Consider the coverage of the valid input/output domain, the extent of coverage achieved, and the mutants it eliminates (i.e., killed). Limit your comparison to half a page. If your comparison exceeds this, only the first half-page you will be assessed.
 
 ## Marking criteria
 
@@ -163,7 +163,7 @@ Compare the two sets of test cases (equivalence partitioning and boundary-value 
 | Discussion               | Clear demonstration of understanding the topics covered in the assignment, presented logically.                                                                                                           | 1     |
 | **Total**                |                                                                                                                                                                                                           | 20    |
 
-For the Original tests, we award 1 mark if your JUnit test does not cause a build failure, and your test suite **does not fail** against the original code base. If you do not receive the mark for the original tests, you will also receive nomark for the Mutant score and staff mutant score part.
+For the Original tests, we award 1 mark if your JUnit test does not cause a build failure, and your test suite **does not fail** against the original code base. If you do not receive the mark for the original tests, you will also receive no mark for the Mutant score and staff mutant score part.
 
 **Important**: We determine that a mutant is killed when a JUnit test includes a failed test. Because of this, if a test case fails when applied to the original source code, it will also fail on most of your mutants and staff mutants. If you find a test that is supposed to pass according to the specifications but fails in the original source code, please let us know via a private thread showing your test cases on the discussion board.
 
