@@ -172,7 +172,7 @@ If not all mutants are killed, we calculate the mark using the following formula
 ```
 Mutant_score = (mutants_killed / 5) * (1 - penalty_for_equivalent_mutant)
 ```
-For the Staff mutant score, the teaching team will create five mutants following the same instructions in Task 6. We award 2marks if all staff mutants are killed by some of your tests. This part ensures that your mutants and tests aiming to kill them are not deliberately crafted.
+For the Staff mutant score, the teaching team will create five mutants following the same instructions in Task 6. We award 2 marks if all staff mutants are killed by some of your tests. This part ensures that your mutants and tests aiming to kill them are not deliberately crafted.
 If not all mutants are killed, we calculate the score using the following formula:
 ```
 Staff_mutant_score = (staff_mutants_killed / 5) * 2
